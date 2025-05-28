@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pemesanan Sewa Alat Berat</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        color: #fff;
+        background: url(/img/beko.jpg) no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 0;
+      }
+
+      .container {
+        background: rgba(255 255 255 / 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 40px 30px;
+        max-width: 420px;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 8px 32px 0 rgba(255, 111, 97, 0.25);
+        border: 1px solid rgba(255, 111, 97, 0.3);
+      }
+
+      h1 {
+        margin-bottom: 25px;
+        font-weight: 600;
+        font-size: 1.8rem;
+        color: #ff6f61;
+        text-align: center;
+        letter-spacing: 1.2px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-bottom: 6px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #ff6f61;
+      }
+
+      input,
+      select {
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: none;
+        font-size: 1rem;
+        font-weight: 400;
+        background: rgba(255 255 255 / 0.35);
+        color: #fff;
+      }
+
+      input::placeholder {
+        color: #eee;
+      }
+
+      input:focus,
+      select:focus {
+        outline: none;
+        background: rgba(255 255 255 / 0.6);
+        color: #000;
+      }
+
+      select {
+        appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="%23ff6f61" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 16px;
+        padding-right: 45px;
+        cursor: pointer;
+      }
+
+      button {
+        padding: 14px;
+        background-color: #ff6f61;
+        border: none;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      button:hover {
+        background-color: #e65a53;
+      }
+
+      .button-arrow {
+        margin-left: 10px;
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div class="container" role="main" aria-label="Form Pemesanan">
+      <h1>Form Pemesanan</h1>
+      <form id="bookingForm" method="POST" novalidate>
+        <!-- Hidden untuk Formsubmit -->
+        <input type="hidden" name="_next" value="https://wa.me/62279258938" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        <label for="name">Nama</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Nama lengkap"
+          required
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Alamat email"
+          required
+        />
+
+        <label for="phone">Nomor HP</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Nomor HP aktif"
+          required
+          pattern="^\+?\d{9,15}$"
+        />
+
+        <label for="service">Pilihan Layanan</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Pilih layanan</option>
+          <option value="Truck antar">Truck antar</option>
+          <option value="sany 50">sany 50</option>
+          <option value="sany 75">sany 75</option>
+          <option value="komatsu 135">komatsu 135</option>
+        </select>
+
+        <label for="date">Tanggal / Jadwal</label>
+        <input type="date" id="date" name="date" required />
+
+        <button type="submit">
+          Submit <span class="button-arrow">➝</span> Konfirmasi WA
+        </button>
+      </form>
+    </div>
+
+    <script>
+      const dateInput = document.getElementById("date");
+      const today = new Date().toISOString().split("T")[0];
+      dateInput.setAttribute("min", today);
+
+      const form = document.getElementById("bookingForm");
+
+      form.addEventListener("submit", function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          form.reportValidity();
+          return;
+        }
+
+        const name = encodeURIComponent(form.name.value.trim());
+        const email = encodeURIComponent(form.email.value.trim());
+        const phone = form.phone.value.trim();
+        const service = encodeURIComponent(form.service.value);
+        const date = encodeURIComponent(form.date.value);
+
+        const message = `Halo, saya ingin memesan layanan sewa alat berat:
+Nama: ${name}
+Email: ${email}
+Nomor HP: ${phone}
+Layanan: ${service}
+Tanggal/Jadwal: ${date}`;
+
+        const whatsappURL = `https://wa.me/6282279258938?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, "_blank");
+
+        // Set action agar Formsubmit tetap jalan
+        form.action = "https://formsubmit.co/msaidd15@gmail.com";
+        form.setAttribute("target", "_self");
+      });
+    </script>
+  </body>
+</html>

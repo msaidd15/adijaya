@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Company Profile Landing Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background" aria-hidden="true"></div>
+    <div class="overlay" aria-hidden="true"></div>
+
+    <nav role="navigation" aria-label="Primary navigation">
+      <a href="index.html" style="text-decoration: none">
+        <div class="logo" tabindex="0">ADI JAYA</div></a
+      >
+
+      <!-- Hamburger Icon -->
+      <button
+        class="hamburger"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        onclick="toggleMenu()"
+      >
+        ☰
+      </button>
+
+      <ul id="nav-menu">
+        <li><a href="#home" tabindex="0">BERANDA</a></li>
+        <li><a href="service.html" tabindex="0">SERVICE</a></li>
+        <li><a href="tentang.html" tabindex="0">TENTANG KAMI</a></li>
+        <li><a href="#contact" tabindex="0">KONTAK</a></li>
+      </ul>
+    </nav>
+
+    <main class="container" role="main" id="home">
+      <h1>ALAT BERAT ADI JAYA</h1>
+      <p class="tagline">
+        Mitra Terbaik Anda dalam Penyewaan Alat Berat. Kualitas dan Komitmen
+        Tanpa Kompromi.
+      </p>
+      <a href="booking.html"> <button class="btn">Pesan Sekarang!</button></a>
+    </main>
+
+    <section id="why-choose-us" aria-labelledby="why-choose-us-title">
+      <h2 id="why-choose-us-title">Kenapa memilih kami?</h2>
+
+      <article class="faq-item">
+        <h3 class="faq-question">
+          Berapa lama pengalaman kami di bidang penyewaan alat berat?
+        </h3>
+        <p class="faq-answer">
+          Dengan lebih dari 10 tahun pengalaman, kami telah membantu berbagai
+          proyek konstruksi, pertambangan, dan infrastruktur dengan solusi sewa
+          alat berat yang terbukti andal dan efisien.
+        </p>
+      </article>
+
+      <article class="faq-item">
+        <h3 class="faq-question">
+          Apakah kami menyediakan dukungan teknis yang responsif?
+        </h3>
+        <p class="faq-answer">
+          Ya. Tim teknis kami siap membantu 24 jam sehari, 7 hari seminggu,
+          untuk memastikan alat berat Anda tetap beroperasi optimal tanpa
+          gangguan.
+        </p>
+      </article>
+
+      <article class="faq-item">
+        <h3 class="faq-question">Apa yang membuat layanan kami berbeda?</h3>
+        <p class="faq-answer">
+          Kami menawarkan pendekatan yang fleksibel dan personal, memberikan
+          solusi sewa alat berat yang disesuaikan dengan kebutuhan spesifik
+          proyek Anda.
+        </p>
+      </article>
+
+      <article class="faq-item">
+        <h3 class="faq-question">Siapa saja yang sudah mempercayai kami?</h3>
+        <p class="faq-answer">
+          Kami telah menjadi mitra terpercaya bagi berbagai perusahaan besar di
+          Indonesia dan memiliki sertifikasi resmi yang membuktikan kualitas,
+          integritas, dan profesionalisme kami.
+        </p>
+      </article>
+    </section>
+
+    <section id="product-catalog" aria-labelledby="product-catalog-title">
+      <h2 id="product-catalog-title">Layanan Kami</h2>
+      <div class="product-grid">
+        <article
+          class="product-box"
+          tabindex="0"
+          aria-label="Produk Inovasi Teknologi"
+        >
+          <img
+            class="product-img"
+            src="img/truk.jpg"
+            alt="Gambar produk inovasi teknologi"
+          />
+          <h3 class="product-title">Truck Antar</h3>
+          <p class="product-desc">
+            Tidak memiliki armada? Kami siap mengantarkan alat berat langsung ke
+            lokasi proyek Anda secara aman dan tepat waktu.
+          </p>
+        </article>
+        <article
+          class="product-box"
+          tabindex="0"
+          aria-label="Produk Konsultasi Profesional"
+        >
+          <img
+            class="product-img"
+            src="img/sany 50.jpg"
+            alt="Gambar produk konsultasi profesional"
+          />
+          <h3 class="product-title">Sany 50</h3>
+          <p class="product-desc">
+            SANY 50 adalah alat berat bertenaga tinggi yang andal, efisien, irit
+            bahan bakar, dan cocok untuk berbagai proyek.
+          </p>
+        </article>
+        <article
+          class="product-box"
+          tabindex="0"
+          aria-label="Produk Layanan Pelanggan"
+        >
+          <img
+            class="product-img"
+            src="img/sany 75.jpg"
+            alt="Gambar produk layanan pelanggan"
+          />
+          <h3 class="product-title">Sany 75</h3>
+          <p class="product-desc">
+            SANY 75 adalah excavator serbaguna yang kuat, irit bahan bakar, dan
+            ideal untuk proyek skala menengah hingga besar.
+          </p>
+        </article>
+
+        <article
+          class="product-box"
+          tabindex="0"
+          aria-label="Produk Solusi Inovatif"
+        >
+          <img
+            class="product-img"
+            src="img/beko 135.jpeg"
+            alt="Gambar produk solusi inovatif"
+          />
+          <h3 class="product-title">Komatsu 135</h3>
+          <p class="product-desc">
+            Komatsu 135 menghadirkan tenaga maksimal, kontrol presisi, dan
+            efisiensi tinggi untuk pekerjaan konstruksi berat dan medan sulit
+            sekalipun.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Hubungi Kami</h2>
+      <div class="contact-content">
+        <div class="contact-text" tabindex="0">
+          <p>
+            Kami siap mendengar dari Anda! Jika Anda mempunyai pertanyaan,
+            kebutuhan khusus, atau ingin berkonsultasi tentang produk dan
+            layanan kami, silakan isi formulir di sebelah kanan.
+          </p>
+          <p>
+            Tim kami akan segera merespons dan membantu Anda dengan solusi
+            terbaik agar kebutuhan bisnis Anda terpenuhi dengan sempurna.
+          </p>
+          <p>
+            Jangan ragu menghubungi kami kapan saja, kami senang dapat membantu!
+          </p>
+        </div>
+        <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+          <label for="name">Nama</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Masukkan nama Anda"
+            required
+            aria-required="true"
+          />
+
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Masukkan email Anda"
+            required
+            aria-required="true"
+          />
+
+          <label for="message">Pesan</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Tulis pesan Anda di sini"
+            required
+            aria-required="true"
+          ></textarea>
+
+          <button type="submit">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Adi Jaya &nbsp;|&nbsp;
+      <a href="alatberatadijaya@gmail.com">contact@adijaya.com</a>
+      &nbsp;|&nbsp;
+      <a href="tel:+1234567890">+68 8373 334</a>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const navMenu = document.querySelector("nav ul");
+        navMenu.classList.toggle("active");
+      }
+
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        const nama = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const pesan = document.getElementById("message").value;
+
+        const noWa = "6282279258938"; // Ganti dengan nomor WhatsApp tujuan
+        const teks = `Halo, saya ${nama}.\nEmail: ${email}\nPesan: ${pesan}`;
+        const url = `https://wa.me/${noWa}?text=${encodeURIComponent(teks)}`;
+
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>

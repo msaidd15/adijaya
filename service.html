@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Menu Layanan - Sewa Alat Berat</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url(img/beko.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+  }
+
+  .overlay {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: rgba(0,0,0,0.45);
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #ff6f61;
+    letter-spacing: 1.5px;
+  }
+
+  .services-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 30px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .service-card {
+    background: rgba(255 255 255 / 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(255,111,97,0.25);
+    border: 1px solid rgba(255,111,97,0.3);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 280px;
+    max-width: 280px;
+    flex-shrink: 0;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 14px 40px 0 rgba(255,111,97,0.5);
+    cursor: pointer;
+  }
+
+  .service-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .service-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .service-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ff6f61;
+  }
+
+  .service-description {
+    font-size: 1rem;
+    line-height: 1.4;
+    flex-grow: 1;
+    color: #fff;
+  }
+
+  /* Hide scrollbar but allow horizontal scrolling on desktop */
+  .services-grid::-webkit-scrollbar {
+    height: 8px;
+  }
+  .services-grid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .services-grid::-webkit-scrollbar-thumb {
+    background-color: rgba(255,111,97,0.5);
+    border-radius: 4px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .services-grid {
+      flex-wrap: wrap;
+      overflow-x: visible;
+      justify-content: center;
+    }
+    .service-card {
+      min-width: 45%;
+      max-width: 45%;
+      margin-bottom: 30px;
+      flex-shrink: 1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .services-grid {
+      flex-wrap: wrap;
+    }
+    .service-card {
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+    .container {
+      padding: 40px 15px;
+    }
+    .service-card {
+      border-radius: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+    
+  <div class="overlay"></div>
+  <main class="container" role="main" aria-label="Menu Layanan Sewa Alat Berat">
+    <h1>Menu Layanan Kami</h1>
+    <section class="services-grid">
+
+      <article class="service-card" tabindex="0" aria-label="Layanan Truck Antar">
+        <img src="img/truk.jpg" alt="Truck Antar" class="service-image" />
+        <div class="service-content">
+          <h2 class="service-title">Truck Antar</h2>
+          <p class="service-description">
+            Layanan pengantaran menggunakan truck besar untuk alat berat Anda dengan aman dan tepat waktu.
+          </p>
+        </div>
+      </article>
+
+      <article class="service-card" tabindex="0" aria-label="Layanan sany 50">
+        <img src="img/sany 50.jpg" alt="sany 50" class="service-image" />
+        <div class="service-content">
+          <h2 class="service-title">sany 50</h2>
+          <p class="service-description">
+            Penyewaan alat berat sany 50 yang tangguh dan efisien untuk pekerjaan konstruksi dan penggalian.
+          </p>
+        </div>
+      </article>
+
+      <article class="service-card" tabindex="0" aria-label="Layanan sany 75">
+        <img src="img/sany 75.jpg" alt="sany 75" class="service-image" />
+        <div class="service-content">
+          <h2 class="service-title">sany 75</h2>
+          <p class="service-description">
+            Sany 75 dengan performa maksimal untuk proyek skala besar, cocok untuk segala medan.
+          </p>
+        </div>
+      </article>
+
+      <article class="service-card" tabindex="0" aria-label="Layanan komatsu 135">
+        <img src="img/beko 135.jpeg" alt="komatsu 135" class="service-image" />
+        <div class="service-content">
+          <h2 class="service-title">komatsu 135</h2>
+          <p class="service-description">
+            Komatsu 135, alat berat andalan untuk efisiensi kerja dan daya tahan tinggi dalam proyek berat.
+          </p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>
+
